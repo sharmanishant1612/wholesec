@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import {
   ShieldCheck,
@@ -16,11 +17,11 @@ import {
 } from "react-icons/fa";
 
 const quickLinks = [
-  "Home",
-  "About Us",
-  "Services",
-  "Blogs",
-  "Contact",
+  { name: "Home", path: "#home" },
+  { name: "About", path: "#about" },
+  { name: "Services", path: "#services" },
+  { name: "Blogs", path: "#blogs" },
+  { name: "Contact", path: "#contact" },
 ];
 
 const services = [
@@ -60,18 +61,14 @@ const contactInfo = [
   {
     id: 1,
     icon: Mail,
-    text: "contact@wholesecsecurity.com",
+    text: "hello@wholesec.com",
   },
   {
     id: 2,
     icon: Phone,
     text: "+1 (000) 123-4567",
   },
-  {
-    id: 3,
-    icon: MapPin,
-    text: "New York, United States",
-  },
+  
 ];
 
 const fadeUp = {
@@ -114,7 +111,10 @@ const Footer = () => {
 
               <div>
                 <h2 className="text-xl font-semibold">
-                  WholeSec Security
+                  WholeSec 
+                </h2>
+                <h2 className="text-xl font-semibold text-green-400">
+                  Holistic Security
                 </h2>
               </div>
             </div>
@@ -157,20 +157,20 @@ const Footer = () => {
               Quick Links
             </h3>
 
-            <ul className="mt-6 space-y-4">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <motion.a
-                    href="#"
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-sm text-gray-400 transition-colors duration-300 hover:text-[#00FF88]"
-                  >
-                    {link}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
+                  <ul className="mt-6 space-y-4">
+                    {quickLinks.map((link, index) => (
+                      <li key={index}>
+                        <motion.a
+                          href={link.path}
+                          whileHover={{ x: 4 }}
+                          transition={{ duration: 0.2 }}
+                          className="text-sm text-gray-400 transition-colors duration-300 hover:text-[#00FF88]"
+                        >
+                          {link.name}
+                        </motion.a>
+                      </li>
+                    ))}
+                  </ul>
           </motion.div>
 
           {/* Services */}
@@ -183,7 +183,7 @@ const Footer = () => {
               {services.map((service, index) => (
                 <li key={index}>
                   <motion.a
-                    href="#"
+                    href="#contact"
                     whileHover={{ x: 4 }}
                     transition={{ duration: 0.2 }}
                     className="text-sm text-gray-400 transition-colors duration-300 hover:text-[#00FF88]"
@@ -232,15 +232,15 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-16 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-8 text-center md:flex-row"
+          className="mt-16 flex flex-col items-center justify-center gap-5 border-t border-white/10 pt-8 text-center md:flex-row"
         >
           {/* Copyright */}
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 ">
             © 2026 WholeSec Security. All rights reserved.
           </p>
 
           {/* Bottom Links */}
-          <div className="flex items-center gap-6">
+          {/* <div className="flex items-center gap-6">
             <a
               href="#"
               className="text-sm text-gray-500 transition-colors duration-300 hover:text-[#00FF88]"
@@ -254,7 +254,7 @@ const Footer = () => {
             >
               Terms & Conditions
             </a>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </footer>

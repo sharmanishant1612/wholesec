@@ -396,8 +396,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
-  Activity,
-  Lock,
   CheckCircle2,
 } from "lucide-react";
 
@@ -414,25 +412,41 @@ const fadeUp = {
   }),
 };
 
+const handlegetStarted = () => {
+  // Implementation for handling the "Get Started" button click
+  const section = document.getElementById("contact");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+const handleLearnMore = () => {
+  // Implementation for handling the "Learn More" button click
+  const section = document.getElementById("about");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const CyberHeroMinimal = () => {
   return (
     <section
       aria-label="Cyber Security Hero Section"
-      className="relative overflow-hidden bg-[#050505] text-white mt-[90px]"
+      className="relative mt-[90px] flex items-center overflow-hidden bg-[#050505] text-white"
       id="home"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,255,136,0.10),transparent_30%)]" />
 
-      {/* Soft Green Orb */}
-      <div className="absolute left-[-120px] top-[-100px] h-[320px] w-[320px] rounded-full bg-[#00FF88]/10 blur-[120px]" />
+      {/* Main Glow */}
+      <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#00FF88]/10 blur-[180px]" />
 
-      {/* Light Grid */}
+      {/* Grid */}
       <div className="absolute inset-0 opacity-[0.04]">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
 
-      {/* Tiny Particles */}
+      {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(12)].map((_, i) => (
           <motion.span
@@ -455,22 +469,22 @@ const CyberHeroMinimal = () => {
         ))}
       </div>
 
-      <div className="relative z-10 mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center gap-16 px-6 py-24 md:px-10 lg:grid-cols-2 lg:px-16">
-        {/* Left Content */}
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-90px)] w-full max-w-5xl items-center justify-center px-6 py-20 sm:px-8 md:px-10 lg:px-16">
         <motion.div
           initial="hidden"
           animate="visible"
-          className="max-w-2xl"
+          className="mx-auto max-w-4xl text-center"
         >
           {/* Badge */}
           <motion.div
             custom={0.1}
             variants={fadeUp}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#00FF88]/20 bg-white/5 px-4 py-2 backdrop-blur-xl"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#00FF88]/20 bg-white/5 px-4 py-2 backdrop-blur-xl"
           >
             <ShieldCheck className="h-4 w-4 text-[#00FF88]" />
             <span className="text-sm font-medium text-[#00FF88]">
-              Trusted Cyber Security Solutions
+              Holistic Cyber Security Partner
             </span>
           </motion.div>
 
@@ -478,7 +492,7 @@ const CyberHeroMinimal = () => {
           <motion.h1
             custom={0.2}
             variants={fadeUp}
-            className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+            className="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Secure Your Business In The{" "}
             <span className="bg-gradient-to-r from-[#00FF88] to-[#10B981] bg-clip-text text-transparent">
@@ -490,7 +504,7 @@ const CyberHeroMinimal = () => {
           <motion.p
             custom={0.3}
             variants={fadeUp}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-gray-400"
+            className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-gray-400 sm:text-lg md:text-xl"
           >
             We provide reliable cyber security solutions to protect your
             business, systems, and sensitive data from modern digital threats.
@@ -500,7 +514,7 @@ const CyberHeroMinimal = () => {
           <motion.div
             custom={0.4}
             variants={fadeUp}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
+            className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <motion.button
               whileHover={{
@@ -508,7 +522,8 @@ const CyberHeroMinimal = () => {
                 boxShadow: "0px 0px 25px rgba(0,255,136,0.25)",
               }}
               whileTap={{ scale: 0.97 }}
-              className="rounded-xl bg-gradient-to-r from-[#00FF88] to-[#10B981] px-8 py-4 font-semibold text-black transition-all duration-300"
+              className="w-full rounded-xl bg-gradient-to-r from-[#00FF88] to-[#10B981] px-8 py-4 font-semibold text-black transition-all duration-300 sm:w-auto"
+              onClick={handlegetStarted}
             >
               Get Started
             </motion.button>
@@ -519,7 +534,8 @@ const CyberHeroMinimal = () => {
                 borderColor: "#00FF88",
               }}
               whileTap={{ scale: 0.97 }}
-              className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-xl transition-all duration-300"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-xl transition-all duration-300 sm:w-auto"
+              onClick={handleLearnMore}
             >
               Learn More
             </motion.button>
@@ -529,7 +545,7 @@ const CyberHeroMinimal = () => {
           <motion.div
             custom={0.5}
             variants={fadeUp}
-            className="mt-10 flex flex-wrap gap-6 text-sm text-gray-300"
+            className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-300 sm:gap-8"
           >
             {[
               "24/7 Monitoring",
@@ -543,18 +559,31 @@ const CyberHeroMinimal = () => {
             ))}
           </motion.div>
         </motion.div>
+      </div>
+    </section>
+  );
+};
 
-        {/* Right UI Card */}
-        <motion.div
+export default CyberHeroMinimal;
+
+
+
+
+
+
+
+
+
+{/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="relative flex items-center justify-center"
         >
-          {/* Glow */}
+        
           <div className="absolute h-[320px] w-[320px] rounded-full bg-[#00FF88]/10 blur-[100px]" />
 
-          {/* Main Card */}
+         
           <motion.div
             animate={{
               y: [0, -8, 0],
@@ -566,7 +595,7 @@ const CyberHeroMinimal = () => {
             }}
             className="relative w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(0,255,136,0.08)] backdrop-blur-2xl"
           >
-            {/* Top */}
+           
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-400">Protection Status</p>
@@ -580,7 +609,7 @@ const CyberHeroMinimal = () => {
               </div>
             </div>
 
-            {/* Analytics */}
+          
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="rounded-2xl border border-white/10 bg-[#111111]/70 p-4">
                 <div className="flex items-center gap-2">
@@ -613,7 +642,7 @@ const CyberHeroMinimal = () => {
               </div>
             </div>
 
-            {/* Bottom Status */}
+           
             <div className="mt-6 rounded-2xl border border-[#00FF88]/10 bg-[#00FF88]/5 p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -629,10 +658,4 @@ const CyberHeroMinimal = () => {
               </div>
             </div>
           </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-export default CyberHeroMinimal;
+        </motion.div> */}

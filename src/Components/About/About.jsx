@@ -91,9 +91,7 @@ const About = () => {
             variants={fadeUp}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400"
           >
-            We provide modern cyber security solutions designed to protect
-            businesses from digital threats while maintaining performance,
-            reliability, and trust.
+            We are a team of cybersecurity experts with extensive experience across the cyber spectrum. Our commitment is to deliver cost-effective holistic protection to ensure security of your business.
           </motion.p>
         </motion.div>
 

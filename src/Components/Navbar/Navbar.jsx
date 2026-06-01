@@ -366,7 +366,7 @@ const Navbar = () => {
     const handleScroll = () => {
       if (location.pathname !== "/") return;
 
-      const sections = ["home", "about", "services", "contact"];
+      const sections = ["home", "about", "services","blogs", "contact"];
 
       sections.forEach((section) => {
         const element = document.getElementById(section);
@@ -422,7 +422,7 @@ const Navbar = () => {
             </h1>
 
             <p className="text-green-400 text-xs tracking-[3px] uppercase">
-              Security
+              Holistic Security
             </p>
           </div>
         </Link>
@@ -458,9 +458,9 @@ const Navbar = () => {
           </li>
 
           {/* Blogs */}
-          <li>
+          {/* <li>
             <NavLink
-              to="/blogs"
+              to="#blogs"
               className={({ isActive }) =>
                 `px-5 py-2 rounded-full text-sm lg:text-base font-medium border transition-all duration-300
                 
@@ -473,6 +473,15 @@ const Navbar = () => {
             >
               Blogs
             </NavLink>
+          </li> */}
+
+           <li>
+            <button
+              onClick={() => handleScrollToSection("blogs")}
+              className={navStyle("blogs")}
+            >
+              Blogs
+            </button>
           </li>
 
           <li>
@@ -550,7 +559,7 @@ const Navbar = () => {
             </button>
           </li>
 
-          <li>
+          {/* <li>
             <NavLink
               to="/blogs"
               onClick={() => setMenuOpen(false)}
@@ -566,6 +575,16 @@ const Navbar = () => {
             >
               Blogs
             </NavLink>
+          </li> */}
+
+
+          <li>
+            <button
+              onClick={() => handleScrollToSection("blogs")}
+              className={navStyle("blogs")}
+            >
+              Blogs
+            </button>
           </li>
 
           <li>
