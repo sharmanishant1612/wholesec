@@ -36,7 +36,7 @@ const HomeBlogs = () => {
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(
-        "https://wholesec.com/wp-json/wp/v2/posts?_embed"
+        "https://cms.wholesec.com/wp-json/wp/v2/posts?_embed"
       );
 
       setBlogs(response.data.slice(0, 6));
@@ -190,6 +190,7 @@ const HomeBlogs = () => {
             <div className="mt-12 flex justify-end">
               <Link
                 to="/blogs"
+                onClick={() => window.scrollTo(0, 0)}
                 className="inline-flex items-center gap-2 rounded-xl border border-[#00FF88]/20 bg-[#00FF88]/10 px-6 py-3 text-sm font-medium text-[#00FF88] transition-all duration-300 hover:bg-[#00FF88]/15"
               >
                 See More

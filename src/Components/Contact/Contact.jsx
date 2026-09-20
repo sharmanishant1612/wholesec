@@ -24,7 +24,7 @@ const contactInfo = [
   {
     id: 2,
     title: "Phone",
-    value: "+1 (000) 123-4567",
+    value: "+91 9105549956",
     icon: Phone,
   },
 ];
@@ -97,7 +97,7 @@ const handleSubmit = async (e) => {
     });
 
     const response = await fetch(
-      "https://wholesec.com/wp-json/custom/v1/contact",
+      "https://cms.wholesec.com/wp-json/custom/v1/contact",
       {
         method: "POST",
         headers: {

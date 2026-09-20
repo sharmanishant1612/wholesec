@@ -17,11 +17,11 @@ import {
 } from "react-icons/fa";
 
 const quickLinks = [
-  { name: "Home", path: "#home" },
-  { name: "About", path: "#about" },
-  { name: "Services", path: "#services" },
-  { name: "Blogs", path: "#blogs" },
-  { name: "Contact", path: "#contact" },
+  { name: "Home", path: "/#home" },
+  { name: "About", path: "/#about" },
+  { name: "Services", path: "/#services" },
+  { name: "Blogs", path: "/#blogs" },
+  { name: "Contact", path: "/#contact" },
 ];
 
 const services = [
@@ -31,30 +31,30 @@ const services = [
 ];
 
 const socialLinks = [
-  {
-    id: 1,
-    icon: FaInstagram,
-    href: "#",
-    label: "Instagram",
-  },
+  // {
+  //   id: 1,
+  //   icon: FaInstagram,
+  //   href: "#",
+  //   label: "Instagram",
+  // },
   {
     id: 2,
     icon: FaLinkedinIn,
-    href: "#",
+    href: "https://www.linkedin.com/company/wholesec/",
     label: "LinkedIn",
   },
-  {
-    id: 3,
-    icon: FaFacebookF,
-    href: "#",
-    label: "Facebook",
-  },
-  {
-    id: 4,
-    icon: FaTwitter,
-    href: "#",
-    label: "Twitter",
-  },
+  // {
+  //   id: 3,
+  //   icon: FaFacebookF,
+  //   href: "#",
+  //   label: "Facebook",
+  // },
+  // {
+  //   id: 4,
+  //   icon: FaTwitter,
+  //   href: "#",
+  //   label: "Twitter",
+  // },
 ];
 
 const contactInfo = [
@@ -66,7 +66,7 @@ const contactInfo = [
   {
     id: 2,
     icon: Phone,
-    text: "+1 (000) 123-4567",
+    text: "+91 9105549956",
   },
   
 ];
@@ -134,6 +134,7 @@ const Footer = () => {
                   <motion.a
                     key={social.id}
                     href={social.href}
+                    target="_blank"
                     aria-label={social.label}
                     whileHover={{
                       y: -3,
@@ -183,7 +184,7 @@ const Footer = () => {
               {services.map((service, index) => (
                 <li key={index}>
                   <motion.a
-                    href="#contact"
+                    href="/#contact"
                     whileHover={{ x: 4 }}
                     transition={{ duration: 0.2 }}
                     className="text-sm text-gray-400 transition-colors duration-300 hover:text-[#00FF88]"

@@ -264,7 +264,7 @@ const Blogs = () => {
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(
-        "https://wholesec.com/wp-json/wp/v2/posts?_embed"
+        "https://cms.wholesec.com/wp-json/wp/v2/posts?_embed"
       );
 
       setBlogs(response.data);

@@ -677,7 +677,7 @@ const SingleBlog = () => {
   const fetchSingleBlog = async () => {
     try {
       const response = await axios.get(
-        `https://wholesec.com/wp-json/wp/v2/posts?slug=${slug}&_embed`
+        `https://cms.wholesec.com/wp-json/wp/v2/posts?slug=${slug}&_embed`
       );
       console.log(response.data);
       if (response.data.length > 0) {
